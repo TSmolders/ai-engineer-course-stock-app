@@ -47,7 +47,7 @@ async function fetchStockData() {
     loadingArea.style.display = 'flex'
     try {
         const stockData = await Promise.all(tickersArr.map(async (ticker) => {
-            const url = `https://polygon-api-worker.guil-9d2.workers.dev/?ticker=${ticker}&startDate=${dates.startDate}&endDate=${dates.endDate}`
+            const url = `https://polygon-api-worker.tuur-smolders.workers.dev/?ticker=${ticker}&startDate=${dates.startDate}&endDate=${dates.endDate}`
             const response = await fetch(url)
             if (!response.ok) {
                 const errMsg = await response.text()
@@ -82,8 +82,8 @@ async function fetchReport(data) {
     ]
     
     try {
-        const url = 'https://openai-api-worker.guil-9d2.workers.dev'
-        
+        const url = 'https://open-ai-worker.tuur-smolders.workers.dev'
+
         const response = await fetch(url, {
             method: 'POST',
             headers: {
